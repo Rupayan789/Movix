@@ -54,6 +54,12 @@ const Login = () => {
               const user = userCredential.user;
               const userValue = Object.values(snapShot.val())[0];
               const playlists = Object.values(userValue.Playlist)
+              playlists.map((item,index)=>{
+                if(item.movies){
+                  item.movies=Object.values(item.movies);
+                }
+                return item;
+              })
               dispatch(userLoginSuccess({
                 id: userValue.id,
                 email: userValue.email,
@@ -61,7 +67,7 @@ const Login = () => {
               }));
               dispatch(fillUserPlaylists({
                 id:userValue.id,
-                playlists
+                playlists:playlists,
               }))
               toast.success("Signed In Successfully")
               navigate("/home");
