@@ -1,1 +1,1 @@
-export const Baseurl = "http://www.omdbapi.com/"
+export const Baseurl = "https://www.omdbapi.com/"
