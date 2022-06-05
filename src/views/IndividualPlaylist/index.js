@@ -12,7 +12,7 @@ import { userLogout } from "../../services/api";
 
 const IndividualPlaylist = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const {userId,playlistname } = useParams();
   const [playlist, setPlaylist] = useState(null);
   const [loading, setLoading] = useState(true);
   const [noAllow,setNoAllow] = useState(false)
@@ -27,28 +27,13 @@ const IndividualPlaylist = () => {
 
 
   const getPlaylist = async () => {
-    let tags = [];
-    let s = "";
-    for (let i = 0; i < location.pathname.length; i++) {
-      if (location.pathname[i] == "/") {
-        if (s.length) {
-          tags.push(s);
-        }
-        s = "";
-      } else {
-        s = s + location.pathname[i];
-      }
-    }
-    if (s.length) {
-      tags.push(s);
-    }
     get(
-      child(dbRef, `Users/${tags[0]}/Playlist/${tags[2].toLowerCase()}`)
+      child(dbRef, `Users/${userId}/Playlist/${playlistname.toLowerCase()}`)
     ).then((ss) => {
       if (ss.exists()) {
         const val = ss.val();
         setLoading(false);
-        if (val.view == "private" && user.id != tags[0]) {
+        if (val.view == "private" && user.id != userId) {
           // toast.error("You are not allowed to see this playlist");
           setNoAllow(true)
         } else {
