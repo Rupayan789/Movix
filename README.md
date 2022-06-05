@@ -1,3 +1,13 @@
+# How to use Movix
+
+## Step-1
+
+Clone the code and run `npm install` in the terminal
+
+## Step-2
+
+Run `npm start` to start the web application
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
