@@ -40,6 +40,12 @@ const Signup = () => {
     setPasswordError("");
     setEmailError("")
     e.preventDefault();
+    if(!email) {
+      setEmailError("Email field can't be blank");
+    }
+    if(!password || !confirmPassword) {
+      setPasswordError("Password field can't be blank")
+    }
     if (
       !email.match(
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i

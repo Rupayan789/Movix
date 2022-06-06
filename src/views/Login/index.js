@@ -30,6 +30,12 @@ const Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    if(!email) {
+      setEmailError("Email field can't be blank");
+    }
+    if(!password) {
+      setPasswordError("Password field can't be blank")
+    }
     if (
       !email.match(
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -110,6 +116,7 @@ const Login = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <p className="text-sm text-red-700">{emailError}</p>
           <label className="bg-regal-blue  bg-clip-text text-transparent mb-1">
@@ -120,6 +127,7 @@ const Login = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <p className="text-sm text-red-700">{passwordError}</p>
           <button
