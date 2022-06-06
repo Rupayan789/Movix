@@ -6,7 +6,7 @@ const Card = (props) => {
   const navigate = useNavigate();
 
   return (
-    <div className="mx-10 w-3/4 mx-auto w-fit md:w-4/5 hover:scale-110 transition-all ease-in-out delay-50  mb-4 md:mb-0 bg-regal-violet pt-4 px-4 pb-4" onClick={()=>navigate(`/movie/${details.imdbID}`)}>
+    <div className="mx-10 w-3/4 mx-auto md:w-4/5 hover:scale-110 transition-all ease-in-out delay-50  mb-4 md:mb-0 bg-regal-violet pt-4 px-4 pb-4" onClick={()=>navigate(`/movie/${details.imdbID}`)}>
       <img className="" src={details.Poster} alt="movie-poster"/>
       <div className="text-white text-center mt-1 text-sm">{details.Title}</div>
     </div>
