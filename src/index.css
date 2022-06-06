@@ -17,4 +17,5 @@ code {
 }
 body{
   background: linear-gradient(90deg, rgba(56,59,69,1) 0%, rgba(1,4,15,1) 100%);
+  overflow-x: hidden;
 }

@@ -78,7 +78,7 @@ const Playlist = () => {
   };
 
   return (
-    <div className="w-screen h-fit md:h-screen bg-regal-dark px-4 md:px-2 ">
+    <div className="w-screen h-fit md:h-screen bg-regal-dark px-4 md:px-2  ">
       <header className="w-full md:w-1/2 mx-auto pt-4">
         <nav className="flex justify-between items-center">
           <h1

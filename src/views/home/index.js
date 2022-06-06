@@ -61,7 +61,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-screen h-fit md:h-screen bg-regal-dark px-4 md:px-2 ">
+    <div className="w-screen h-fit md:h-screen bg-regal-dark px-6 md:px-2  overflow-x-hidden">
       <header className="w-full md:w-1/2 mx-auto pt-4">
         <nav className="flex justify-between items-center">
           <h1
@@ -70,7 +70,7 @@ const Home = () => {
           >
             Movix
           </h1>
-          <aside className="w-1/3 flex justify-between items-center bg-gray-800 shadow-lg py-1 px-2">
+          <aside className="w-1/3 flex justify-between items-center bg-gray-800 shadow-lg py-1 px-2 mr-4">
             <input
               className=" text-gray-400 w-full bg-gray-800 py-1 px-2 focus:outline-none"
               placeholder="Search"
@@ -79,16 +79,16 @@ const Home = () => {
             />
             <BiSearch color="#b3cdd1" />
           </aside>
-          <aside className=" flex  ">
+          <aside className=" flex">
             <span
-              className="ml-4 flex items-center text-white bg-gray-800 hover:bg-gray-600 px-2 py-1 cursor-pointer"
+              className=" flex items-center text-white bg-gray-800 hover:bg-gray-600 px-2 py-1 cursor-pointer"
               onClick={() => navigate("/playlist")}
             >
               <span className="mr-4 pl-1 hidden md:inline-block">Playlist</span>
               <MdPlaylistPlay color="#b3cdd1" size={30} />
             </span>
             <span
-              className="ml-2 md:ml-8 bg-gray-800 flex items-center text-white hover:bg-gray-600 px-2 py-1 cursor-pointer"
+              className="ml-2 md:ml-4 bg-gray-800 flex items-center text-white hover:bg-gray-600 px-2 py-1 cursor-pointer"
               onClick={handleLogout}
             >
               <span className="mr-4 pl-1 hidden md:inline-block">Logout</span>

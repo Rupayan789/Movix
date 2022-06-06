@@ -4,6 +4,7 @@ import { BiSearch, BiLogOut } from "react-icons/bi";
 import axios from "axios";
 import { Baseurl } from "../../baseurl";
 import Modal from "../../components/Modal";
+import { MdPlaylistPlay } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { ref, update } from "firebase/database";
 import { rdb } from "../../services/firebaseConfig";
@@ -100,7 +101,7 @@ const Movie = () => {
   };
 
   return (
-    <div className="w-screen h-fit md:h-screen bg-regal-dark px-4 md:px-2 ">
+    <div className="w-screen h-fit md:h-screen bg-regal-dark px-6 md:px-2">
       <header className="w-full md:w-1/2 mx-auto pt-4">
         <nav className="flex justify-between items-center">
           <h1
@@ -109,12 +110,19 @@ const Movie = () => {
           >
             Movix
           </h1>
-          <aside className="ml-4 bg-gray-800 p-2">
+          <aside className="flex ">
+          <span
+              className="ml-4 flex items-center text-white bg-gray-800 hover:bg-gray-600 p-2 cursor-pointer"
+              onClick={() => navigate("/playlist")}
+            >
+              <span className="mr-2 md:mr-4 pl-1 text-sm">Playlist</span>
+              <MdPlaylistPlay color="#b3cdd1" size={30} />
+            </span>
             <span
-              className=" bg-gray-800 flex items-center text-white hover:bg-gray-600 px-2 py-1 cursor-pointer"
+              className="ml-2 md:ml-4 bg-gray-800 flex items-center text-white hover:bg-gray-600 px-2 py-1 cursor-pointer"
               onClick={handleLogout}
             >
-              <span className="mr-4 pl-1 w-fit">Logout</span>
+              <span className="mr-2 md:mr-4 pl-1 text-sm">Logout</span>
               <BiLogOut color="#b3cdd1" size={25} />
             </span>
           </aside>
